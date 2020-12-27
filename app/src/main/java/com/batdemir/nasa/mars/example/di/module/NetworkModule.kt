@@ -14,6 +14,7 @@ import javax.inject.Singleton
 @Module
 object NetworkModule {
     private const val BASE_URL = "https://api.nasa.gov"
+    const val API_KEY = "qTL1f8gLphjSLf4phUG83RLikffrUhpYTbQsceQI"
 
     @Singleton
     @Provides

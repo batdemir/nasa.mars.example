@@ -19,15 +19,13 @@ ext.versions = [
         lifecycleVersion     : '2.2.0',
         archCompomentVersion : '2.1.0',
         preferenceVersion    : '1.1.1',
-        chartVersion         : 'v3.1.0',
         navigationVersion    : '2.3.2',
         navigationCompVersion: '1.0.0-alpha04',
-        lingverVersion       : '1.3.0',
         dexterVersion        : '6.2.2',
         viewPagerVersion     : '1.0.0',
         glideVersion         : '4.11.0',
         coreVersion          : '1.3.2',
-        roomVersion          : '2.2.5',
+        roomVersion          : '2.2.6',
 
         // startup
         startupVersion       : '1.0.0',
