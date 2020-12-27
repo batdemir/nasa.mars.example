@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/dynamic_filter_navigation"
+        android:icon="@drawable/ic_atom"
+        android:title="@string/title_dynamic_filter" />
+
+    <item
+        android:id="@+id/static_filter_navigation"
+        android:icon="@drawable/ic_static"
+        android:title="@string/title_static_filter" />
+</menu>

@@ -1,2 +1,2 @@
 include ':app'
-rootProject.name = "nasa.mars.example"
+rootProject.name = "nasa.example"

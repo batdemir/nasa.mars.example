@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/root_view_popup"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.batdemir.nasa.example.ui.components.ZoomClass
+            android:id="@+id/image_view"
+            android:layout_width="match_parent"
+            android:layout_height="0sp"
+            android:layout_weight="1"
+            tools:src="@mipmap/ic_launcher_round" />
+
+        <TableLayout
+            android:id="@+id/table_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/black"
+            android:padding="@dimen/padding_large"
+            android:stretchColumns="*">
+
+            <TableRow>
+
+                <TextView
+                    android:id="@+id/text_view_edit_earth_date"
+                    android:textColor="@color/white"
+                    tools:text="12.12.2020" />
+
+                <TextView
+                    android:id="@+id/text_view_edit_rover_name"
+                    android:textColor="@color/white"
+                    tools:text="Curiosity" />
+            </TableRow>
+
+            <TableRow>
+
+                <TextView
+                    android:id="@+id/text_view_edit_camera_name"
+                    android:textColor="@color/white"
+                    tools:text="FHAZ" />
+
+                <TextView
+                    android:id="@+id/text_view_edit_status"
+                    android:textColor="@color/white"
+                    tools:text="Success" />
+            </TableRow>
+
+            <TableRow>
+
+                <TextView
+                    android:id="@+id/text_view_edit_launching_date"
+                    android:textColor="@color/white"
+                    tools:text="12.12.2020" />
+
+                <TextView
+                    android:id="@+id/text_view_edit_landing_date"
+                    android:textColor="@color/white"
+                    tools:text="12.12.2020" />
+            </TableRow>
+        </TableLayout>
+    </LinearLayout>
+</merge>

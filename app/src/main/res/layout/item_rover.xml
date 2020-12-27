@@ -11,77 +11,31 @@
 
         <variable
             name="model"
-            type="com.batdemir.nasa.mars.example.data.entities.db.PhotosModel" />
+            type="com.batdemir.nasa.example.data.entities.db.PhotosModel" />
     </data>
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/root_item_rover"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:clickable="true"
         android:focusable="true"
+        android:foregroundGravity="center"
         app:cardCornerRadius="0sp"
         app:cardUseCompatPadding="true"
         app:contentPadding="@dimen/padding">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/constraint_layout"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <com.google.android.material.imageview.ShapeableImageView
-                android:id="@+id/image_icon"
-                android:layout_width="32sp"
-                android:layout_height="32sp"
-                android:visibility="@{TextUtils.isEmpty(model.imgSrc) ? View.GONE: View.VISIBLE}"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@id/text_view_edit_title"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:setImage="@{model.imgSrc}"
-                tools:src="@drawable/ic_launcher_background" />
-
-            <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/text_view_edit_title"
-                android:layout_width="0sp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/margin"
-                android:layout_marginEnd="@dimen/margin"
-                android:singleLine="true"
-                android:text="@{model.rover.name}"
-                android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
-                android:visibility="@{TextUtils.isEmpty(model.rover.name) ? View.GONE: View.VISIBLE}"
-                app:layout_constraintBottom_toTopOf="@id/text_view_edit_sub_title"
-                app:layout_constraintEnd_toStartOf="@id/image_next"
-                app:layout_constraintStart_toEndOf="@id/image_icon"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:text="Title" />
-
-            <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/text_view_edit_sub_title"
-                android:layout_width="0sp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/margin"
-                android:layout_marginEnd="@dimen/margin"
-                android:singleLine="true"
-                android:text="@{model.rover.launchDate}"
-                android:textAppearance="@android:style/TextAppearance.DeviceDefault.Small"
-                android:visibility="@{TextUtils.isEmpty(model.rover.launchDate) ? View.GONE: View.VISIBLE}"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@id/image_next"
-                app:layout_constraintStart_toEndOf="@id/image_icon"
-                app:layout_constraintTop_toBottomOf="@id/text_view_edit_title"
-                tools:text="Sub title" />
-
-            <com.google.android.material.imageview.ShapeableImageView
-                android:id="@+id/image_next"
-                android:layout_width="16sp"
-                android:layout_height="16sp"
-                android:src="@drawable/ic_gray_next"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@id/text_view_edit_title"
-                app:layout_constraintTop_toTopOf="parent" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/image_icon"
+            android:layout_width="120sp"
+            android:layout_height="120sp"
+            android:layout_gravity="center"
+            android:visibility="@{TextUtils.isEmpty(model.imgSrc) ? View.GONE: View.VISIBLE}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/text_view_edit_title"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:setImage="@{model.imgSrc}"
+            tools:src="@drawable/ic_launcher_background" />
     </com.google.android.material.card.MaterialCardView>
 </layout>

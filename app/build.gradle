@@ -8,13 +8,13 @@ apply from: '../dependencies.gradle'
 android {
     compileSdkVersion versions.compileSdk
     defaultConfig {
-        applicationId "com.batdemir.nasa.mars.example"
+        applicationId "com.batdemir.nasa.example"
         minSdkVersion versions.minSdk
         targetSdkVersion versions.compileSdk
         versionCode versions.versionCode
         versionName versions.versionName
         vectorDrawables.useSupportLibrary = true
-        testInstrumentationRunner "com.batdemir.nasa.mars.example.AppTestRunner"
+        testInstrumentationRunner "com.batdemir.nasa.example.AppTestRunner"
     }
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
@@ -93,4 +93,9 @@ dependencies {
 
     // debugging
     implementation "com.jakewharton.timber:timber:$versions.timberVersion"
+
+    def paging_version = "3.0.0-alpha11"
+    implementation "androidx.paging:paging-runtime-ktx:$paging_version"
+    // optional - Guava ListenableFuture support
+    implementation "androidx.paging:paging-guava:$paging_version"
 }

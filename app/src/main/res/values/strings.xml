@@ -1,5 +1,19 @@
 <resources>
-    <string name="app_name">nasa.mars.example</string>
-    <string name="filter">Filter</string>
-    <string name="title_activity_main">MainActivity</string>
+    <string name="app_name">Nasa Batdemir</string>
+
+    <string name="title_main">Main</string>
+    <string name="title_filter">Filter</string>
+    <string name="title_dynamic_filter">Dynamic Filter</string>
+    <string name="title_static_filter">Static Filter</string>
+
+    <string name="dynamic_earth_date">Earth Date: %s</string>
+    <string name="dynamic_rover_name">Rover Name: %s</string>
+    <string name="dynamic_camera_name">Camera: %s</string>
+    <string name="dynamic_status">Status: %s</string>
+    <string name="dynamic_launching_date">Launching Date: %s</string>
+    <string name="dynamic_landing_date">Landing Date: %s</string>
+
+    <string name="no_item_to_list_found">No item to list found</string>
+    <string name="cancel">Cancel</string>
+    <string name="ok">OK</string>
 </resources>
