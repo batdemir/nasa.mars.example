@@ -6,9 +6,9 @@ import android.os.Bundle
 import com.batdemir.nasa.example.R
 
 fun Activity.move(
-    to: Class<*>,
-    isKeepHistory: Boolean,
-    bundle: Bundle?
+        to: Class<*>,
+        isKeepHistory: Boolean,
+        bundle: Bundle?
 ) {
     val intent = Intent(this, to)
     if (bundle != null)

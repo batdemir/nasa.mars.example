@@ -16,7 +16,7 @@ import com.bumptech.glide.Glide
 class ZoomUtil constructor(private val context: Context) {
     private var currentAnimator: Animator? = null
     private var shortAnimationDuration: Int =
-        context.resources.getInteger(android.R.integer.config_shortAnimTime)
+            context.resources.getInteger(android.R.integer.config_shortAnimTime)
 
     fun zoomImageFromThumb(thumbView: View, url: String, into: PopupClass, root: View) {
         // If there's an animation in progress, cancel it
@@ -25,9 +25,9 @@ class ZoomUtil constructor(private val context: Context) {
 
         // Load the high-resolution "zoomed-in" image.
         Glide
-            .with(context)
-            .load(url)
-            .into(into.zoomClass)
+                .with(context)
+                .load(url)
+                .into(into.zoomClass)
 
         // Calculate the starting and ending bounds for the zoomed-in image.
         // This step involves lots of math. Yay, math.
@@ -85,36 +85,36 @@ class ZoomUtil constructor(private val context: Context) {
         // scale properties (X, Y, SCALE_X, and SCALE_Y).
         currentAnimator = AnimatorSet().apply {
             play(
-                ObjectAnimator.ofFloat(
-                    into,
-                    View.X,
-                    startBounds.left,
-                    finalBounds.left
-                )
+                    ObjectAnimator.ofFloat(
+                            into,
+                            View.X,
+                            startBounds.left,
+                            finalBounds.left
+                    )
             ).apply {
                 with(
-                    ObjectAnimator.ofFloat(
-                        into,
-                        View.Y,
-                        startBounds.top,
-                        finalBounds.top
-                    )
+                        ObjectAnimator.ofFloat(
+                                into,
+                                View.Y,
+                                startBounds.top,
+                                finalBounds.top
+                        )
                 )
                 with(
-                    ObjectAnimator.ofFloat(
-                        into,
-                        View.SCALE_X,
-                        startScale,
-                        1f
-                    )
+                        ObjectAnimator.ofFloat(
+                                into,
+                                View.SCALE_X,
+                                startScale,
+                                1f
+                        )
                 )
                 with(
-                    ObjectAnimator.ofFloat(
-                        into,
-                        View.SCALE_Y,
-                        startScale,
-                        1f
-                    )
+                        ObjectAnimator.ofFloat(
+                                into,
+                                View.SCALE_Y,
+                                startScale,
+                                1f
+                        )
                 )
             }
             duration = shortAnimationDuration.toLong()
@@ -142,32 +142,32 @@ class ZoomUtil constructor(private val context: Context) {
             // back to their original values.
             currentAnimator = AnimatorSet().apply {
                 play(
-                    ObjectAnimator.ofFloat(
-                        into,
-                        View.X,
-                        startBounds.left
-                    )
+                        ObjectAnimator.ofFloat(
+                                into,
+                                View.X,
+                                startBounds.left
+                        )
                 ).apply {
                     with(
-                        ObjectAnimator.ofFloat(
-                            into,
-                            View.Y,
-                            startBounds.top
-                        )
+                            ObjectAnimator.ofFloat(
+                                    into,
+                                    View.Y,
+                                    startBounds.top
+                            )
                     )
                     with(
-                        ObjectAnimator.ofFloat(
-                            into,
-                            View.SCALE_X,
-                            startScale
-                        )
+                            ObjectAnimator.ofFloat(
+                                    into,
+                                    View.SCALE_X,
+                                    startScale
+                            )
                     )
                     with(
-                        ObjectAnimator.ofFloat(
-                            into,
-                            View.SCALE_Y,
-                            startScale
-                        )
+                            ObjectAnimator.ofFloat(
+                                    into,
+                                    View.SCALE_Y,
+                                    startScale
+                            )
                     )
                 }
                 duration = shortAnimationDuration.toLong()

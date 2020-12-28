@@ -11,12 +11,12 @@ import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 
 class NasaRepository @Inject constructor(
-    private val service: NasaPagingService
+        private val service: NasaPagingService
 ) {
     fun getPagingDataSource(searchParams: MySearchParams): Flow<PagingData<PhotosModel>> {
         return Pager(
-            config = PagingConfig(pageSize = NETWORK_PAGE_SIZE, enablePlaceholders = false),
-            pagingSourceFactory = { NasaPagingDataSource(service, searchParams) }
+                config = PagingConfig(pageSize = NETWORK_PAGE_SIZE, enablePlaceholders = false),
+                pagingSourceFactory = { NasaPagingDataSource(service, searchParams) }
         ).flow
     }
 

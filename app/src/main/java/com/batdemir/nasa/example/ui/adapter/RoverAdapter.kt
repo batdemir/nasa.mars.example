@@ -11,7 +11,7 @@ import com.batdemir.nasa.example.data.entities.db.PhotosModel
 import com.batdemir.nasa.example.databinding.ItemRoverBinding
 
 class RoverAdapter(private val itemListener: ItemListener) :
-    PagingDataAdapter<PhotosModel, RoverAdapter.RoverViewHolder>(Companion) {
+        PagingDataAdapter<PhotosModel, RoverAdapter.RoverViewHolder>(Companion) {
 
     class RoverViewHolder(val binding: ItemRoverBinding) : RecyclerView.ViewHolder(binding.root)
 
@@ -21,27 +21,27 @@ class RoverAdapter(private val itemListener: ItemListener) :
 
     companion object : DiffUtil.ItemCallback<PhotosModel>() {
         override fun areItemsTheSame(
-            oldItem: PhotosModel,
-            newItem: PhotosModel
+                oldItem: PhotosModel,
+                newItem: PhotosModel
         ): Boolean =
-            oldItem === newItem
+                oldItem === newItem
 
         override fun areContentsTheSame(
-            oldItem: PhotosModel,
-            newItem: PhotosModel
+                oldItem: PhotosModel,
+                newItem: PhotosModel
         ): Boolean =
-            oldItem.id == newItem.id
+                oldItem.id == newItem.id
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RoverViewHolder {
         val layoutInflater = LayoutInflater.from(parent.context)
         val binding =
-            DataBindingUtil.inflate<ItemRoverBinding>(
-                layoutInflater,
-                R.layout.item_rover,
-                parent,
-                false
-            )
+                DataBindingUtil.inflate<ItemRoverBinding>(
+                        layoutInflater,
+                        R.layout.item_rover,
+                        parent,
+                        false
+                )
         return RoverViewHolder(binding)
     }
 

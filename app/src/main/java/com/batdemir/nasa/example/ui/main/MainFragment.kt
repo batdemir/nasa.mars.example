@@ -31,9 +31,9 @@ class MainFragment : BaseFragment<FragmentMainBinding>(R.layout.fragment_main) {
         TabLayoutMediator(binding!!.tabLayout, binding!!.viewPager) { tab, position ->
             when (position) {
                 RoverType.CURIOSITY_INDEX.value -> tab.text =
-                    RoverType.CURIOSITY_INDEX.strValue
+                        RoverType.CURIOSITY_INDEX.strValue
                 RoverType.OPPORTUNITY_INDEX.value -> tab.text =
-                    RoverType.OPPORTUNITY_INDEX.strValue
+                        RoverType.OPPORTUNITY_INDEX.strValue
                 RoverType.SPIRIT_INDEX.value -> tab.text = RoverType.SPIRIT_INDEX.strValue
             }
         }.attach()

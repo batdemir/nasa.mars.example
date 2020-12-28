@@ -12,10 +12,10 @@ import com.batdemir.nasa.example.data.entities.db.PhotosModel
 import com.batdemir.nasa.example.utils.TimeExpressions
 
 class PopupClass @JvmOverloads constructor(
-    context: Context,
-    attrs: AttributeSet? = null,
-    defStyle: Int = 0,
-    defStyleRes: Int = 0
+        context: Context,
+        attrs: AttributeSet? = null,
+        defStyle: Int = 0,
+        defStyleRes: Int = 0
 ) : LinearLayout(context, attrs, defStyle, defStyleRes) {
     val zoomClass: ZoomClass
     private val textViewEditEarthDate: TextView
@@ -45,40 +45,40 @@ class PopupClass @JvmOverloads constructor(
 
     fun populateDate(model: PhotosModel) {
         textViewEditEarthDate.text = String.format(
-            context.getString(R.string.dynamic_earth_date),
-            TimeExpressions.setDateFormat(
-                model.earthDate,
-                TimeExpressions.DateFormat.SMALL_DATE_FORMAT,
-                TimeExpressions.DateFormat.SHOW_DATE_FORMAT
-            )
+                context.getString(R.string.dynamic_earth_date),
+                TimeExpressions.setDateFormat(
+                        model.earthDate,
+                        TimeExpressions.DateFormat.SMALL_DATE_FORMAT,
+                        TimeExpressions.DateFormat.SHOW_DATE_FORMAT
+                )
         )
         textViewEditRoverName.text = String.format(
-            context.getString(R.string.dynamic_rover_name),
-            model.rover.name
+                context.getString(R.string.dynamic_rover_name),
+                model.rover.name
         )
         textViewEditCameraName.text = String.format(
-            context.getString(R.string.dynamic_camera_name),
-            model.camera.name
+                context.getString(R.string.dynamic_camera_name),
+                model.camera.name
         )
         textViewEditStatus.text = String.format(
-            context.getString(R.string.dynamic_status),
-            model.rover.status
+                context.getString(R.string.dynamic_status),
+                model.rover.status
         )
         textViewEditLaunchingDate.text = String.format(
-            context.getString(R.string.dynamic_launching_date),
-            TimeExpressions.setDateFormat(
-                model.rover.launchDate,
-                TimeExpressions.DateFormat.SMALL_DATE_FORMAT,
-                TimeExpressions.DateFormat.SHOW_DATE_FORMAT
-            )
+                context.getString(R.string.dynamic_launching_date),
+                TimeExpressions.setDateFormat(
+                        model.rover.launchDate,
+                        TimeExpressions.DateFormat.SMALL_DATE_FORMAT,
+                        TimeExpressions.DateFormat.SHOW_DATE_FORMAT
+                )
         )
         textViewEditLandingDate.text = String.format(
-            context.getString(R.string.dynamic_landing_date),
-            TimeExpressions.setDateFormat(
-                model.rover.landingDate,
-                TimeExpressions.DateFormat.SMALL_DATE_FORMAT,
-                TimeExpressions.DateFormat.SHOW_DATE_FORMAT
-            )
+                context.getString(R.string.dynamic_landing_date),
+                TimeExpressions.setDateFormat(
+                        model.rover.landingDate,
+                        TimeExpressions.DateFormat.SMALL_DATE_FORMAT,
+                        TimeExpressions.DateFormat.SHOW_DATE_FORMAT
+                )
         )
     }
 }

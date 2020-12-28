@@ -12,8 +12,8 @@ import com.bumptech.glide.module.AppGlideModule
 class MyGlideAppModule : AppGlideModule() {
     override fun applyOptions(context: Context, builder: GlideBuilder) {
         val calculator = MemorySizeCalculator.Builder(context)
-            .setMemoryCacheScreens(2f)
-            .build()
+                .setMemoryCacheScreens(2f)
+                .build()
         builder.setMemoryCache(LruResourceCache(calculator.memoryCacheSize.toLong()))
     }
 }

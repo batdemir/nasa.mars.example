@@ -133,8 +133,9 @@ class RoverFragment :
     private fun setupAlertDialog() {
         alertDialogBuilder = AlertDialog.Builder(requireContext())
         alertDialogBuilder.setCancelable(false)
+        alertDialogBuilder.setTitle(getString(R.string.filter_by_name))
         alertDialogBuilder.setPositiveButton(
-            getString(R.string.ok)
+                getString(R.string.ok)
         ) { _, _ -> setupData() }
         alertDialogBuilder.setNegativeButton(
             getString(R.string.cancel)

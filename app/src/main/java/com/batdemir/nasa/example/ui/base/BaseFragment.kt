@@ -10,7 +10,7 @@ import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
 
 abstract class BaseFragment<X : ViewDataBinding> constructor(
-    private val layoutId: Int
+        private val layoutId: Int
 ) : Fragment(), BaseAction {
 
     protected var binding: X? = null
@@ -21,15 +21,15 @@ abstract class BaseFragment<X : ViewDataBinding> constructor(
     }
 
     override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
+            inflater: LayoutInflater,
+            container: ViewGroup?,
+            savedInstanceState: Bundle?
     ): View {
         binding = DataBindingUtil.inflate<X>(
-            layoutInflater,
-            layoutId,
-            container,
-            false
+                layoutInflater,
+                layoutId,
+                container,
+                false
         ).apply {
             this.lifecycleOwner = viewLifecycleOwner
         }

@@ -15,9 +15,9 @@ class CustomViewBinding {
             if (res.isNullOrEmpty())
                 return
             Glide
-                .with(this.context)
-                .load(res)
-                .into(this)
+                    .with(this.context)
+                    .load(res)
+                    .into(this)
         }
 
         @JvmStatic

@@ -6,7 +6,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 
 abstract class BaseActivity<X : ViewDataBinding> constructor(
-    private val layoutId: Int
+        private val layoutId: Int
 ) : AppCompatActivity(), BaseAction {
 
     protected var binding: X? = null

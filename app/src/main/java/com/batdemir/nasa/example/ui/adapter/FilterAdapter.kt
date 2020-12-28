@@ -11,7 +11,7 @@ import com.batdemir.nasa.example.data.entities.ui.FilterModel
 import com.batdemir.nasa.example.databinding.ItemFilterBinding
 
 class FilterAdapter(private val listener: ItemListener) :
-    ListAdapter<FilterModel, FilterAdapter.FilterViewHolder>(Companion) {
+        ListAdapter<FilterModel, FilterAdapter.FilterViewHolder>(Companion) {
 
     interface ItemListener {
         fun onClick(model: FilterModel)
@@ -21,27 +21,27 @@ class FilterAdapter(private val listener: ItemListener) :
 
     companion object : DiffUtil.ItemCallback<FilterModel>() {
         override fun areItemsTheSame(
-            oldItem: FilterModel,
-            newItem: FilterModel
+                oldItem: FilterModel,
+                newItem: FilterModel
         ): Boolean =
-            oldItem === newItem
+                oldItem === newItem
 
         override fun areContentsTheSame(
-            oldItem: FilterModel,
-            newItem: FilterModel
+                oldItem: FilterModel,
+                newItem: FilterModel
         ): Boolean =
-            oldItem.id == newItem.id
+                oldItem.id == newItem.id
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FilterViewHolder {
         val layoutInflater = LayoutInflater.from(parent.context)
         val binding =
-            DataBindingUtil.inflate<ItemFilterBinding>(
-                layoutInflater,
-                R.layout.item_filter,
-                parent,
-                false
-            )
+                DataBindingUtil.inflate<ItemFilterBinding>(
+                        layoutInflater,
+                        R.layout.item_filter,
+                        parent,
+                        false
+                )
         return FilterViewHolder(binding)
     }
 

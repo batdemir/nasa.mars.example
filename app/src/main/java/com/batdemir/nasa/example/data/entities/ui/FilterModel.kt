@@ -4,18 +4,17 @@ import android.os.Parcel
 import android.os.Parcelable
 
 data class FilterModel(
-    val id: Long,
-    val title: String,
-    val subTitle: String,
-    var isSelected: Boolean,
+        val id: Long,
+        val title: String,
+        val subTitle: String,
+        var isSelected: Boolean,
 ) : Parcelable {
     constructor(parcel: Parcel) : this(
-        parcel.readLong(),
-        parcel.readString()!!,
-        parcel.readString()!!,
-        parcel.readByte() != 0.toByte()
-    ) {
-    }
+            parcel.readLong(),
+            parcel.readString()!!,
+            parcel.readString()!!,
+            parcel.readByte() != 0.toByte()
+    )
 
     override fun writeToParcel(parcel: Parcel, flags: Int) {
         parcel.writeLong(id)

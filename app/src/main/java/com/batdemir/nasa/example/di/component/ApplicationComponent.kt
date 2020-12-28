@@ -11,11 +11,11 @@ import javax.inject.Singleton
 
 @Singleton
 @Component(
-    modules = [
-        NetworkModule::class,
-        RepositoryModule::class,
-        StorageModule::class
-    ]
+        modules = [
+            NetworkModule::class,
+            RepositoryModule::class,
+            StorageModule::class
+        ]
 )
 interface ApplicationComponent {
     @Component.Factory

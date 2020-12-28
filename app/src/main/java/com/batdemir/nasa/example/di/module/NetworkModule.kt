@@ -24,9 +24,9 @@ object NetworkModule {
 
         if (BuildConfig.DEBUG)
             okHttpClientBuilder.addInterceptor(
-                HttpLoggingInterceptor().setLevel(
-                    HttpLoggingInterceptor.Level.BODY
-                )
+                    HttpLoggingInterceptor().setLevel(
+                            HttpLoggingInterceptor.Level.BODY
+                    )
             )
         return okHttpClientBuilder.build()
     }
@@ -35,21 +35,21 @@ object NetworkModule {
     @Provides
     fun provideGsonConverterFactory(): GsonConverterFactory {
         return GsonConverterFactory
-            .create()
+                .create()
     }
 
     @Singleton
     @Provides
     fun provideRetrofit(
-        gsonConverterFactory: GsonConverterFactory,
-        client: OkHttpClient
+            gsonConverterFactory: GsonConverterFactory,
+            client: OkHttpClient
     ): Retrofit {
         return Retrofit
-            .Builder()
-            .baseUrl(BASE_URL)
-            .addConverterFactory(gsonConverterFactory)
-            .client(client)
-            .build()
+                .Builder()
+                .baseUrl(BASE_URL)
+                .addConverterFactory(gsonConverterFactory)
+                .client(client)
+                .build()
     }
 
     //////////////////////////////////////////////////////
@@ -57,15 +57,15 @@ object NetworkModule {
     @Singleton
     @Provides
     fun provideServiceNasaPaging(retrofit: Retrofit): NasaPagingService =
-        retrofit.create(NasaPagingService::class.java)
+            retrofit.create(NasaPagingService::class.java)
 
     @Singleton
     @Provides
     fun provideRemoteDataSourceNasaPaging(
-        service: NasaPagingService,
-        searchParams: MySearchParams
+            service: NasaPagingService,
+            searchParams: MySearchParams
     ) =
-        NasaPagingDataSource(service, searchParams)
+            NasaPagingDataSource(service, searchParams)
 
     //////////////////////////////////////////////////////
 }

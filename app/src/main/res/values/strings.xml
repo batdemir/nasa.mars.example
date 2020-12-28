@@ -13,6 +13,7 @@
     <string name="dynamic_launching_date">Launching Date: %s</string>
     <string name="dynamic_landing_date">Landing Date: %s</string>
 
+    <string name="filter_by_name">Filter by Name</string>
     <string name="no_item_to_list_found">No item to list found</string>
     <string name="cancel">Cancel</string>
     <string name="ok">OK</string>

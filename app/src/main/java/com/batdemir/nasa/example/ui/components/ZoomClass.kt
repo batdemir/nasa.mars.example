@@ -14,10 +14,10 @@ import androidx.core.view.isGone
 import com.batdemir.nasa.example.R
 
 class ZoomClass :
-    AppCompatImageView,
-    View.OnTouchListener,
-    GestureDetector.OnGestureListener,
-    GestureDetector.OnDoubleTapListener {
+        AppCompatImageView,
+        View.OnTouchListener,
+        GestureDetector.OnGestureListener,
+        GestureDetector.OnDoubleTapListener {
     //shared constructing
     private var mContext: Context? = null
     private var mScaleDetector: ScaleGestureDetector? = null
@@ -48,9 +48,9 @@ class ZoomClass :
     }
 
     constructor(context: Context?, attrs: AttributeSet?, defStyleAttr: Int) : super(
-        context!!,
-        attrs,
-        defStyleAttr
+            context!!,
+            attrs,
+            defStyleAttr
     )
 
     private fun sharedConstructing(context: Context) {
@@ -84,16 +84,16 @@ class ZoomClass :
                 mScaleFactor = mMinScale / prevScale
             }
             if (origWidth * mSaveScale <= viewWidth
-                || origHeight * mSaveScale <= viewHeight
+                    || origHeight * mSaveScale <= viewHeight
             ) {
                 mMatrix!!.postScale(
-                    mScaleFactor, mScaleFactor, viewWidth / 2.toFloat(),
-                    viewHeight / 2.toFloat()
+                        mScaleFactor, mScaleFactor, viewWidth / 2.toFloat(),
+                        viewHeight / 2.toFloat()
                 )
             } else {
                 mMatrix!!.postScale(
-                    mScaleFactor, mScaleFactor,
-                    detector.focusX, detector.focusY
+                        mScaleFactor, mScaleFactor,
+                        detector.focusX, detector.focusY
                 )
             }
             fixTranslation()
@@ -129,9 +129,9 @@ class ZoomClass :
     fun fixTranslation() {
         mMatrix!!.getValues(mMatrixValues) //put matrix values into a float array so we can analyze
         val transX =
-            mMatrixValues!![Matrix.MTRANS_X] //get the most recent translation in x direction
+                mMatrixValues!![Matrix.MTRANS_X] //get the most recent translation in x direction
         val transY =
-            mMatrixValues!![Matrix.MTRANS_Y] //get the most recent translation in y direction
+                mMatrixValues!![Matrix.MTRANS_Y] //get the most recent translation in y direction
         val fixTransX = getFixTranslation(transX, viewWidth.toFloat(), origWidth * mSaveScale)
         val fixTransY = getFixTranslation(transY, viewHeight.toFloat(), origHeight * mSaveScale)
         if (fixTransX != 0f || fixTransY != 0f) mMatrix!!.postTranslate(fixTransX, fixTransY)
@@ -217,10 +217,10 @@ class ZoomClass :
     }
 
     override fun onScroll(
-        motionEvent: MotionEvent,
-        motionEvent1: MotionEvent,
-        v: Float,
-        v1: Float
+            motionEvent: MotionEvent,
+            motionEvent1: MotionEvent,
+            v: Float,
+            v1: Float
     ): Boolean {
         return false
     }
@@ -230,10 +230,10 @@ class ZoomClass :
     }
 
     override fun onFling(
-        motionEvent: MotionEvent,
-        motionEvent1: MotionEvent,
-        v: Float,
-        v1: Float
+            motionEvent: MotionEvent,
+            motionEvent1: MotionEvent,
+            v: Float,
+            v1: Float
     ): Boolean {
         return false
     }

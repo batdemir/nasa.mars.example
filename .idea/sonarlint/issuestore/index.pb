@@ -31,3 +31,5 @@ F
 Zapp/src/main/java/com/batdemir/nasa/example/data/remote/datasource/NasaPagingDataSource.kt,3/5/35aa7afbc27bafdbc8defaff3cdb893f8488b54e
 }
 Mapp/src/main/java/com/batdemir/nasa/example/data/repository/NasaRepository.kt,8/7/87cc05315da0b8caf4bfdafdb6f9ce4b2bc34b0f
+z
+Japp/src/main/java/com/batdemir/nasa/example/ui/main/rover/RoverFragment.kt,4/a/4ad76b23550c9aa3f7ac8da652f13910dc7341cc

@@ -18,9 +18,9 @@ object TimeExpressions {
     }
 
     fun setDateFormat(
-        dateString: String,
-        inputFormat: DateFormat,
-        outputFormat: DateFormat
+            dateString: String,
+            inputFormat: DateFormat,
+            outputFormat: DateFormat
     ): String {
         val date = setStringToDate(dateString, inputFormat)
         return setDateToString(date, outputFormat)

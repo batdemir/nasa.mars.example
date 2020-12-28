@@ -6,22 +6,22 @@ import androidx.viewpager2.adapter.FragmentViewHolder
 import com.batdemir.nasa.example.ui.main.rover.RoverFragment
 
 class RoverCollectionAdapter(
-    private val fragment: Fragment
+        private val fragment: Fragment
 ) : FragmentStateAdapter(fragment) {
 
     private var isDynamic: Boolean = true
 
     override fun createFragment(
-        position: Int
+            position: Int
     ): Fragment =
-        RoverFragment.newInstance(position, isDynamic)
+            RoverFragment.newInstance(position, isDynamic)
 
     override fun getItemCount() = 3
 
     override fun onBindViewHolder(
-        holder: FragmentViewHolder,
-        position: Int,
-        payloads: MutableList<Any>
+            holder: FragmentViewHolder,
+            position: Int,
+            payloads: MutableList<Any>
     ) {
         if (payloads.isNotEmpty()) {
             val tag = "f" + holder.itemId
